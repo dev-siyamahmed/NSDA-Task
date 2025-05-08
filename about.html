@@ -1,67 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>About Us - Edu Institute</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+  </style>
 </head>
+
 <body>
-  <!-- Navigation (same as index.html) -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- Header -->
+  <header class="bg-light py-5">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold">Meet Our Dedicated Team</h1>
+      <p class="lead text-muted">Passionate professionals driving student success</p>
+    </div>
+  </header>
+
+  <!-- Staff Section -->
+  <section class="py-4 bg-light">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Edu Institute</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+      <h2 class="text-center mb-5 fw-bold">Our Staff</h2>
+      <div class="row g-4 text-center">
+        <!-- Staff Card -->
+        <div class="col-sm-6 col-lg-4" data-name="staff-card">
+          <div class="staff-card h-100">
+            <img
+              src="https://media.istockphoto.com/id/1171169099/photo/man-with-crossed-arms-isolated-on-gray-background.jpg?s=612x612&w=0&k=20&c=_vETAeGc6ooeOx-WZYFyZdUUL5hyDPrvakBpjytN7lM="
+              alt="Jane Smith" />
+            <div class="staff-info">
+              <h5>Jane Smith</h5>
+              <p>Senior Lecturer, Computer Science</p>
+            </div>
+          </div>
+        </div>
 
-  <div class="container my-4">
-    <h2>Our Staff</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <img src="images/staff1.jpg" class="img-fluid rounded" alt="">
-        <h5>Jane Smith</h5>
-        <p>Senior Lecturer, Computer Science</p>
-      </div>
-      <div class="col-md-4">
-        <img src="images/staff2.jpg" class="img-fluid rounded" alt="">
-        <h5>Michael Brown</h5>
-        <p>Head of Design Department</p>
-      </div>
-      <div class="col-md-4">
-        <img src="images/staff3.jpg" class="img-fluid rounded" alt="">
-        <h5>Lisa White</h5>
-        <p>Workshop Coordinator</p>
-      </div>
-    </div>
-    <hr>
-    <h2>About Our Institute</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <img src="images/about1.jpg" class="img-fluid rounded" alt="">
-      </div>
-      <div class="col-md-6">
-        <p>Edu Institute is a leading educational platform providing quality education and training in various fields. Our mission is to empower students with practical skills and knowledge.</p>
-      </div>
-    </div>
-  </div>
+        <div class="col-sm-6 col-lg-4" data-name="staff-card">
+          <div class="staff-card h-100">
+            <img
+              src="https://st2.depositphotos.com/1570716/8433/i/450/depositphotos_84330370-stock-photo-portrait-of-a-smart-young.jpg"
+              alt="Michael Brown" />
+            <div class="staff-info">
+              <h5>Michael Brown</h5>
+              <p>Head of Design Department</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- Footer (same as index.html) -->
-  <footer class="bg-primary text-white text-center py-3">
-    <span id="datetime"></span>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+        <div class="col-sm-6 col-lg-4" data-name="staff-card">
+          <div class="staff-card h-100">
+            <img
+              src="https://media.istockphoto.com/id/942796282/photo/portrait-of-serious-fashionable-handsome-man-in-blue-suit-and-tie-buttoning-cufflinks.jpg?s=612x612&w=0&k=20&c=b30hf1HGHL91BGaWDjii6HwqRoWjauCIi9orAhblVFc="
+              alt="Lisa White" />
+            <div class="staff-info">
+              <h5>Lisa White</h5>
+              <p>Workshop Coordinator</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4" data-name="staff-card">
+          <div class="staff-card h-100">
+            <img
+              src="https://media.istockphoto.com/id/1416048929/photo/woman-working-on-laptop-online-checking-emails-and-planning-on-the-internet-while-sitting-in.jpg?s=612x612&w=0&k=20&c=mt-Bsap56B_7Lgx1fcLqFVXTeDbIOILVjTdOqrDS54s="
+              alt="Emily Watson" />
+            <div class="staff-info">
+              <h5>Emily Watson</h5>
+              <p>Lecturer, Data Science</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4" data-name="staff-card">
+          <div class="staff-card h-100">
+            <img
+              src="https://st.depositphotos.com/2309453/2658/i/450/depositphotos_26584711-stock-photo-portrait-of-smart-man-against.jpg"
+              alt="Dr. Kevin Lee" />
+            <div class="staff-info">
+              <h5>Dr. Kevin Lee</h5>
+              <p>AI & Robotics Specialist</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-name="staff-card">
+          <div class="staff-card h-100">
+            <img
+              src="https://www.shutterstock.com/image-photo/young-smart-busy-professional-business-600nw-2223351329.jpg"
+              alt="Dr. Kevin Lee" />
+            <div class="staff-info">
+              <h5>Sophia Turner</h5>
+              <p>Graphic Design Specialist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About Institute -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img
+            src="https://thumbs.dreamstime.com/b/graduate-books-front-university-ideal-education-concepts-graduation-time-educational-institutions-graduate-314308552.jpg"
+            class="img-fluid rounded shadow" alt="About Edu Institute">
+        </div>
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-3">About Edu Institute</h2>
+          <p class="text-muted">Edu Institute is a modern and progressive learning hub where education meets innovation.
+            Our mission is to empower students with knowledge, real-world skills, and career-ready experiences. With
+            expert faculty and industry-standard labs, we prepare learners for success in a dynamic world.</p>
+          <ul class="list-unstyled text-muted">
+            <li><i class="fas fa-check-circle text-success me-2"></i> Practical, industry-aligned curriculum</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Experienced and friendly instructors</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Cutting-edge lab facilities</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Career counseling and placement support</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Collaboration with international universities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Services Section -->
+
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">Our Services</h2>
+      <div class="row g-4 text-center">
+        <div class="col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-white">
+            <i class="fas fa-laptop-code fa-2x mb-2 text-primary"></i>
+            <h6 class="fw-semibold">Online Classes</h6>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-white">
+            <i class="fas fa-user-graduate fa-2x mb-2 text-primary"></i>
+            <h6 class="fw-semibold">Career Support</h6>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-white">
+            <i class="fas fa-flask fa-2x mb-2 text-primary"></i>
+            <h6 class="fw-semibold">Lab Access</h6>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-white">
+            <i class="fas fa-book-reader fa-2x mb-2 text-primary"></i>
+            <h6 class="fw-semibold">Study Materials</h6>
+          </div>
+        </div>
+        <!-- Additional Services -->
+        <div class="col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-white">
+            <i class="fas fa-headset fa-2x mb-2 text-primary"></i>
+            <h6 class="fw-semibold">24/7 Support</h6>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-white">
+            <i class="fas fa-cogs fa-2x mb-2 text-primary"></i>
+            <h6 class="fw-semibold">Technical Assistance</h6>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-white">
+            <i class="fas fa-users fa-2x mb-2 text-primary"></i>
+            <h6 class="fw-semibold">Community Engagement</h6>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-white">
+            <i class="fas fa-chalkboard-teacher fa-2x mb-2 text-primary"></i>
+            <h6 class="fw-semibold">Expert Guidance</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Load navbar
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+  
+      // Load footer
+      fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        });
+  
+      // Update datetime
+      function updateDateTime() {
+        const now = new Date();
+        const options = { 
+          weekday: 'long', 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        };
+        const datetimeElements = document.querySelectorAll('#datetime');
+        datetimeElements.forEach(element => {
+          element.textContent = now.toLocaleDateString('en-US', options);
+        });
+      }
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+    </script>
 </body>
+
 </html>

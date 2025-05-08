@@ -1,103 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Institute Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">Edu Institute</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
+  <div id="navbar-placeholder"></div>
 
   <!-- Banner -->
   <div class="container-fluid  p-0 mb-4">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/002/294/878/small/learning-and-education-web-banner-design-free-vector.jpg" class="img-fluid w-100" alt="Banner">
+    <img
+      src="https://static.vecteezy.com/system/resources/thumbnails/002/294/878/small/learning-and-education-web-banner-design-free-vector.jpg"
+      class="img-fluid w-100" alt="Banner">
   </div>
 
   <!-- Head of Institute -->
   <div class="container mb-5">
     <div class="row align-items-center bg-light rounded shadow-sm p-4">
       <div class="col-md-3 text-center mb-3 mb-md-0">
-        <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" class="img-fluid rounded-circle border border-3" alt="Head">
+        <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
+          class="img-fluid rounded-circle border border-3" alt="Head">
       </div>
       <div class="col-md-9">
         <h2 class="fw-bold">Dr. John Doe</h2>
         <p class="mb-1">Principal, Edu Institute</p>
-        <p class="text-muted">20+ years of experience in the education sector. Passionate about empowering students for the future.</p>
+        <p class="text-muted">20+ years of experience in the education sector. Passionate about empowering students for
+          the future.</p>
       </div>
     </div>
   </div>
 
-  <!-- Courses -->
-  <div class="container mb-5">
+  <div class="container my-5">
     <h3 class="fw-bold mb-4 text-center">Our Courses</h3>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="https://www.creativeitinstitute.com/images/course/course_1663052056.jpg" class="card-img-top" alt="Course 1">
-          <div class="card-body">
-            <h5 class="card-title">Web Development</h5>
-            <p class="card-text">Learn HTML, CSS, JS, and more. Build modern, responsive websites and web apps.</p>
+    <div id="course-container" class="row g-4 "></div>
+  </div>
+
+  <script>
+    const courses = [
+      {
+        title: "Web Development",
+        image: "https://www.creativeitinstitute.com/images/course/course_1663052056.jpg",
+        description: "Learn HTML, CSS, JavaScript, React, Node.js, and build modern responsive websites.",
+        duration: "6 Months",
+        classTime: "2 Days/Week (Evening)",
+        fee: "$600"
+      },
+      {
+        title: "Data Science",
+        image: "https://www.fsm.ac.in/blog/wp-content/uploads/2022/07/FUqHEVVUsAAbZB0.jpg",
+        description: "Master Python, Machine Learning, Pandas, and Data Visualization with real projects.",
+        duration: "8 Months",
+        classTime: "3 Days/Week (Weekend)",
+        fee: "$950"
+      },
+      {
+        title: "Graphic Design",
+        image: "https://img.freepik.com/free-vector/cartoon-graphic-design-landing-page_52683-70881.jpg?semt=ais_hybrid&w=740",
+        description: "Learn Adobe Photoshop, Illustrator, InDesign, and UI/UX design fundamentals.",
+        duration: "5 Months",
+        classTime: "2 Days/Week (Morning)",
+        fee: "$500"
+      },
+      {
+        title: "Cyber Security",
+        image: "https://t4.ftcdn.net/jpg/02/45/63/69/360_F_245636933_kY23ohGptK5t6n8wGSXIgLgVXWeHJRct.jpg",
+        description: "Protect systems and networks, learn ethical hacking, penetration testing, and SIEM tools.",
+        duration: "7 Months",
+        classTime: "3 Days/Week (Evening)",
+        fee: "$880"
+      },
+      {
+        title: "Digital Marketing",
+        image: "https://media.istockphoto.com/id/1443560890/photo/digital-marketing-business-technology-concept-website-advertisement-email-social-media.jpg?s=612x612&w=0&k=20&c=S7d_Mof_fEsM69inW540APogoXkz-eA23XE1AIhTaBA=",
+        description: "Become a digital strategist with SEO, PPC, Email Marketing, and Analytics skills.",
+        duration: "4 Months",
+        classTime: "Weekend (Fri-Sat)",
+        fee: "$450"
+      },
+      {
+        title: "AI & Machine Learning",
+        image: "https://media.istockphoto.com/id/1628291798/photo/artificial-intelligence-and-machine-learning-concept.jpg?s=612x612&w=0&k=20&c=7HuC-jduWch3dDGzcw5Rx4JTFJIEiHSx4bsUzBiQAJI=",
+        description: "Learn Neural Networks, Deep Learning, and build smart AI-powered applications.",
+        duration: "9 Months",
+        classTime: "2 Days/Week (Evening)",
+        fee: "$1200"
+      }
+    ];
+
+    const courseContainer = document.getElementById("course-container");
+
+    courses.forEach(course => {
+      courseContainer.innerHTML += `
+        <div class="col-md-6 col-lg-4 ">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="${course.image}" class="card-img-top rounded-top-4" alt="${course.title}">
+            <div class="card-body px-3 py-3">
+              <h5 class="card-title fw-semibold text-primary">${course.title}</h5>
+              <p class="card-text small text-muted">${course.description}</p>
+              <ul class="list-unstyled small text-muted">
+                <li><strong>Duration:</strong> ${course.duration}</li>
+                <li><strong>Class Time:</strong> ${course.classTime}</li>
+                <li><strong>Course Fee:</strong> ${course.fee}</li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary btn-sm mt-2 rounded-pill">Learn More</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="https://www.fsm.ac.in/blog/wp-content/uploads/2022/07/FUqHEVVUsAAbZB0.jpg" class="card-img-top" alt="Course 2">
-          <div class="card-body">
-            <h5 class="card-title">Data Science</h5>
-            <p class="card-text">Master Python, Machine Learning, and Data Analysis for real-world applications.</p>
+      `;
+    });
+  </script>
+
+
+
+  <!-- Courses Offered -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">Our Popular Courses</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm bg-light h-100">
+            <h5 class="fw-semibold">Full Stack Web Development</h5>
+            <p class="text-muted">Learn HTML, CSS, JavaScript, React, Node.js & more to build real-world applications.
+            </p>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="https://img.freepik.com/free-vector/cartoon-graphic-design-landing-page_52683-70881.jpg?semt=ais_hybrid&w=740" class="card-img-top" alt="Course 3">
-          <div class="card-body">
-            <h5 class="card-title">Graphic Design</h5>
-            <p class="card-text">Explore Photoshop, Illustrator, and UI/UX design for creative professionals.</p>
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm bg-light h-100">
+            <h5 class="fw-semibold">Data Science & Analytics</h5>
+            <p class="text-muted">Master data manipulation, visualization, and machine learning with Python.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm bg-light h-100">
+            <h5 class="fw-semibold">UI/UX Design</h5>
+            <p class="text-muted">Design beautiful, user-friendly digital products using Figma and design thinking.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">Our Achievements</h2>
+      <div class="row g-4 text-center">
+        <!-- Total Students -->
+        <div class="col-sm-6 col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-light h-100">
+            <i class="fas fa-users fa-2x mb-2 text-success"></i>
+            <h5 class="fw-semibold">10,000+</h5>
+            <p class="text-muted mb-0">Total Students</p>
+          </div>
+        </div>
+        <!-- Total Courses -->
+        <div class="col-sm-6 col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-light h-100">
+            <i class="fas fa-book-open fa-2x mb-2 text-info"></i>
+            <h5 class="fw-semibold">150+</h5>
+            <p class="text-muted mb-0">Total Courses</p>
+          </div>
+        </div>
+        <!-- Successful Students -->
+        <div class="col-sm-6 col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-light h-100">
+            <i class="fas fa-user-check fa-2x mb-2 text-primary"></i>
+            <h5 class="fw-semibold">8,000+</h5>
+            <p class="text-muted mb-0">Successful Students</p>
+          </div>
+        </div>
+        <!-- Total Teachers -->
+        <div class="col-sm-6 col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-light h-100">
+            <i class="fas fa-chalkboard-teacher fa-2x mb-2 text-warning"></i>
+            <h5 class="fw-semibold">50+</h5>
+            <p class="text-muted mb-0">Qualified Teachers</p>
+          </div>
+        </div>
+        <!-- Student Satisfaction -->
+        <div class="col-sm-6 col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-light h-100">
+            <i class="fas fa-star fa-2x mb-2 text-secondary"></i>
+            <h5 class="fw-semibold">95%</h5>
+            <p class="text-muted mb-0">Student Satisfaction</p>
+          </div>
+        </div>
+        <!-- Live Projects Completed -->
+        <div class="col-sm-6 col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-light h-100">
+            <i class="fas fa-project-diagram fa-2x mb-2 text-danger"></i>
+            <h5 class="fw-semibold">300+</h5>
+            <p class="text-muted mb-0">Live Projects Completed</p>
+          </div>
+        </div>
+        <!-- Countries Reached -->
+        <div class="col-sm-6 col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-light h-100">
+            <i class="fas fa-globe fa-2x mb-2 text-dark"></i>
+            <h5 class="fw-semibold">25+</h5>
+            <p class="text-muted mb-0">Countries Reached</p>
+          </div>
+        </div>
+        <!-- Placement Rate -->
+        <div class="col-sm-6 col-md-3">
+          <div class="border p-4 rounded shadow-sm bg-light h-100">
+            <i class="fas fa-briefcase fa-2x mb-2 text-success"></i>
+            <h5 class="fw-semibold">90%</h5>
+            <p class="text-muted mb-0">Placement Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Gallery -->
   <div class="container mb-5">
     <h3 class="fw-bold mb-4 text-center">Student & Workshop Gallery</h3>
-    <div class="row g-3">
-      <div class="col-6 col-md-4 col-lg-2"><img src="https://media.istockphoto.com/id/1443245439/photo/business-meeting-businesswoman-woman-office-portrait-job-career-happy-businessman-teamwork.jpg?s=612x612&w=0&k=20&c=1ZR02c1UKfGdBCNWzzKlrwrVZuEiOqnAKcKF4V_t038=" class="img-fluid rounded shadow-sm" alt="Gallery 1"></div>
-      <div class="col-6 col-md-4 col-lg-2"><img src="https://thumbs.dreamstime.com/b/students-college-university-education-attending-lecture-workshop-concept-92874946.jpg" class="img-fluid rounded shadow-sm" alt="Gallery 2"></div>
-      <div class="col-6 col-md-4 col-lg-2"><img src="https://dhj39lki9ox12.cloudfront.net/generalUploads/lifestyle-images/professional-development.jpg?mode=crop&pos=center-center&q=98&f=webp&c=593cd703&v=8da50151d82a0d29c20cb3199d0cf3e7e5cd53fb97b0f2438f1a3d29b2d2762a" class="img-fluid rounded shadow-sm" alt="Gallery 3"></div>
-      <div class="col-6 col-md-4 col-lg-2"><img src="https://www.shutterstock.com/image-photo/young-happy-asian-business-man-600nw-2166658943.jpg" class="img-fluid rounded shadow-sm" alt="Gallery 4"></div>
-      <div class="col-6 col-md-4 col-lg-2"><img src="https://www.shutterstock.com/image-photo/four-diverse-multiracial-young-professional-600nw-2021619692.jpg" class="img-fluid rounded shadow-sm" alt="Gallery 5"></div>
-      <div class="col-6 col-md-4 col-lg-2"><img src="https://www.lehman.edu/media/Continuing-Education/Site-Assets/images/mandated-workshops.jpeg" class="img-fluid rounded shadow-sm" alt="Gallery 6"></div>
+    <div class="row g-4">
+      <!-- Gallery Item 1 -->
+      <div class="col-12 col-md-4">
+        <div class="position-relative overflow-hidden rounded">
+          <img src="https://www.shutterstock.com/image-photo/young-happy-asian-business-man-600nw-2166658943.jpg"
+            class="img-fluid rounded shadow-sm" alt="Leadership Workshop">
+          <div class="overlay d-flex justify-content-center align-items-center text-center">
+            <div class="overlay-content text-white p-3">
+              <h6 class="mb-2">Leadership Workshop</h6>
+              <p class="mb-0">Enhancing leadership skills for professionals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="col-12 col-md-4">
+        <div class="position-relative overflow-hidden rounded">
+          <img
+            src="https://thumbs.dreamstime.com/b/students-college-university-education-attending-lecture-workshop-concept-92874946.jpg"
+            class="img-fluid rounded shadow-sm" alt="Interactive Workshops">
+          <div class="overlay d-flex justify-content-center align-items-center text-center">
+            <div class="overlay-content text-white p-3">
+              <h6 class="mb-2">Interactive Workshops</h6>
+              <p class="mb-0">Hands-on experience with various learning modules.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="col-12 col-md-4">
+        <div class="position-relative overflow-hidden rounded">
+          <img
+            src="https://dhj39lki9ox12.cloudfront.net/generalUploads/lifestyle-images/professional-development.jpg?mode=crop&pos=center-center&q=98&f=webp&c=593cd703&v=8da50151d82a0d29c20cb3199d0cf3e7e5cd53fb97b0f2438f1a3d29b2d2762a"
+            class="img-fluid rounded shadow-sm" alt="Professional Development">
+          <div class="overlay d-flex justify-content-center align-items-center text-center">
+            <div class="overlay-content text-white p-3">
+              <h6 class="mb-2">Professional Development</h6>
+              <p class="mb-0">Workshops to advance your career and skills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="col-12 col-md-4">
+        <div class="position-relative overflow-hidden rounded">
+          <img src="https://www.shutterstock.com/image-photo/young-happy-asian-business-man-600nw-2166658943.jpg"
+            class="img-fluid rounded shadow-sm" alt="Tech Workshop">
+          <div class="overlay d-flex justify-content-center align-items-center text-center">
+            <div class="overlay-content text-white p-3">
+              <h6 class="mb-2">Tech Workshop</h6>
+              <p class="mb-0">Deep dive into technology and innovation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 5 -->
+      <div class="col-12 col-md-4">
+        <div class="position-relative overflow-hidden rounded">
+          <img
+            src="https://www.shutterstock.com/image-photo/four-diverse-multiracial-young-professional-600nw-2021619692.jpg"
+            class="img-fluid rounded shadow-sm" alt="Collaboration & Teamwork">
+          <div class="overlay d-flex justify-content-center align-items-center text-center">
+            <div class="overlay-content text-white p-3">
+              <h6 class="mb-2">Collaboration & Teamwork</h6>
+              <p class="mb-0">Workshops focusing on teamwork and collaboration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 6 -->
+      <div class="col-12 col-md-4">
+        <div class="position-relative overflow-hidden rounded">
+          <img src="https://www.lehman.edu/media/Continuing-Education/Site-Assets/images/mandated-workshops.jpeg"
+            class="img-fluid rounded shadow-sm" alt="Mandated Workshops">
+          <div class="overlay d-flex justify-content-center align-items-center text-center">
+            <div class="overlay-content text-white p-3">
+              <h6 class="mb-2">Mandated Workshops</h6>
+              <p class="mb-0">Required workshops for skill certification.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="bg-primary text-white text-center py-3 mt-5 shadow-sm">
-    <span id="datetime"></span>
-  </footer>
+  <div id="footer-placeholder"></div>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+  <script>
+    // Load navbar
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    // Load footer
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+
+    // Update datetime
+    function updateDateTime() {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      const datetimeElements = document.querySelectorAll('#datetime');
+      datetimeElements.forEach(element => {
+        element.textContent = now.toLocaleDateString('en-US', options);
+      });
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
 </body>
+
 </html>

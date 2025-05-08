@@ -1,69 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Contact Us - Edu Institute</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-  <!-- Navigation (same as index.html) -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">Edu Institute</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-7">
-        <div class="card shadow-sm border-0">
-          <div class="card-body p-4">
-            <h2 class="fw-bold mb-4 text-center">Contact Us</h2>
-            <form id="contactForm">
-              <div class="mb-3">
-                <label class="form-label">Name</label>
-                <input type="text" class="form-control" required>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <h2 class="fw-bold mb-4 text-center">Contact Us</h2>
+              <form id="contactForm">
+                <div class="mb-3">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+              </form>
+            </div>
+          </div>
+          <div class="mt-4 p-4 bg-light rounded shadow-sm">
+            <h4 class="fw-bold mb-3">Contact Information</h4>
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-map-marker-alt text-primary me-3 fa-lg"></i>
+              <div>
+                <h6 class="mb-0">Address</h6>
+                <p class="mb-0 text-muted">123 Main St, City</p>
               </div>
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" required>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-envelope text-primary me-3 fa-lg"></i>
+              <div>
+                <h6 class="mb-0">Email</h6>
+                <p class="mb-0 text-muted">info@eduinstitute.com</p>
               </div>
-              <div class="mb-3">
-                <label class="form-label">Message</label>
-                <textarea class="form-control" rows="4" required></textarea>
+            </div>
+            <div class="d-flex align-items-center">
+              <i class="fas fa-phone text-primary me-3 fa-lg"></i>
+              <div>
+                <h6 class="mb-0">Phone</h6>
+                <p class="mb-0 text-muted">+880 1234-567890</p>
               </div>
-              <button type="submit" class="btn btn-primary w-100">Send Message</button>
-            </form>
+            </div>
           </div>
         </div>
-        <div class="mt-4 p-4 bg-light rounded shadow-sm">
-          <h4 class="fw-bold mb-2">Contact Information</h4>
-          <p class="mb-1"><strong>Address:</strong> 123 Main St, City</p>
-          <p class="mb-1"><strong>Email:</strong> info@eduinstitute.com</p>
-          <p class="mb-0"><strong>Phone:</strong> +880 1234-567890</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Modal for Form Submission -->
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="formModalLabel">Confirm Submission</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to submit the form? You can review your information below:
+          <ul>
+            <li><strong>Name:</strong> <span id="modalName"></span></li>
+            <li><strong>Email:</strong> <span id="modalEmail"></span></li>
+            <li><strong>Message:</strong> <span id="modalMessage"></span></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="confirmSubmit">Submit</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer (same as index.html) -->
-  <footer class="bg-primary text-white text-center py-3 mt-5 shadow-sm">
-    <span id="datetime"></span>
-  </footer>
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+  <script>
+    // Load navbar
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    // Load footer
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+
+    // Form Submission Handler
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevents the form from submitting normally
+
+      // Populate the modal with form data
+      const name = document.querySelector('input[type="text"]').value;
+      const email = document.querySelector('input[type="email"]').value;
+      const message = document.querySelector('textarea').value;
+
+      document.getElementById('modalName').textContent = name;
+      document.getElementById('modalEmail').textContent = email;
+      document.getElementById('modalMessage').textContent = message;
+
+      // Show modal
+      const modal = new bootstrap.Modal(document.getElementById('formModal'));
+      modal.show();
+    });
+
+    // Handle modal submit button click
+    document.getElementById('confirmSubmit').addEventListener('click', function() {
+      // Here, you can submit the form using fetch or any other method
+      alert('Form submitted successfully!');
+
+      // Close the modal and reset the form
+      const modal = bootstrap.Modal.getInstance(document.getElementById('formModal'));
+      modal.hide();
+      document.getElementById('contactForm').reset();
+    });
+
+    // Update datetime
+    function updateDateTime() {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      const datetimeElements = document.querySelectorAll('#datetime');
+      datetimeElements.forEach(element => {
+        element.textContent = now.toLocaleDateString('en-US', options);
+      });
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
 </body>
-</html> 
+
+</html>
